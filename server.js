@@ -1,4 +1,5 @@
 const http = require('http');
+const path = require('path');
 const Koa = require('koa');
 const Router = require('koa-router');
 const cors = require('koa2-cors');
@@ -9,7 +10,7 @@ const app = new Koa();
 app.use(cors());
 app.use(koaBody({json: true}));
 
-const notes = [];
+const notes = [{content: 'First note', id: 0}];
 let nextId = 1;
 
 const router = new Router();
